@@ -1,0 +1,35 @@
+nav {
+  height: 120px;
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 1.5em;
+  padding-bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 40px;
+}
+.nav__new {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.5em;
+}
+
+.nav__new > i {
+  color: red;
+}
+.nav__newPara {
+  margin: 0;
+}
+
+.nav__newPara > span {
+  font-weight: bold;
+}
