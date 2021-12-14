@@ -28,6 +28,14 @@ body {
   /*background image size setting*/
   height: 100vh;
 }
+main {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(232, 159, 33);
+  background-image: url("/images/background_texture.png");
+  height: 100vh;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
