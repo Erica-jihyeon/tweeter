@@ -6,13 +6,21 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  background-image: url("/images/background_texture.png");
+  background-color: rgb(232, 159, 33);
+  /*background image size setting*/
 }
 
 header img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
+/* br {
+  line-height: 100%;
+} */
+
 header h2 {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
