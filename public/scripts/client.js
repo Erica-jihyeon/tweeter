@@ -30,7 +30,6 @@ $(document).ready(function() {
     }
   ]
   
-  console.log(data);
   const renderTweets = function(tweets) {
     console.log(tweets);
     for (const tweet of tweets) {
@@ -71,7 +70,27 @@ $(document).ready(function() {
   // const $tweet = createTweetElement(tweetData);
   // console.log($tweet);
   // $('.container').append($tweet);
-  renderTweets(data);
+  const loadTweets = function() {
+    $.getJSON('/tweets')
+    .then((data) => {
+      // console.log(data);
+      for (const elem of data) {
+        const tweet = createTweetElement(elem);
+        $('.container').append(tweet);
+      }
+    })
+  }
+  loadTweets();
+  $("#tweet_submit").on('submit', function(evt) {
+    evt.preventDefault();
+    // console.log(evt);
+    const $tweetText = $('#tweet-text');
+    // console.log($tweetText.serialize());
+    $.post("/tweets", $tweetText.serialize());
+    
+
+  })
+  
 
 })
 
