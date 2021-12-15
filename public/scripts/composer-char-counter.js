@@ -5,13 +5,12 @@ $(document).ready(function() {
     counter.text(140 - $(this).val().length);
 
     if (counter.text() < 0) {
-      // $('.counter').css('color', 'red');
-      counter.css("color", "red");
-      // $('.counter').prop('id', 'changeColor');
-      console.log($('.counter'))
+      // counter.css("color", "red");
+      $('.counter').addClass('changeColor');
+
     } else {
-      counter.css("color", "#545149");
-      // $('.counter').removeAttr('#changeColor');
+      // counter.css("color", "#545149");
+      $('.counter').removeClass('changeColor');
     }
   })
   

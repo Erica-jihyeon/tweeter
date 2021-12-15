@@ -1,0 +1,80 @@
+.tweet-messages {
+  height: 200px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.tweet-messages a {
+  text-decoration: none;
+  color: rgb(32, 52, 165);
+}
+
+.tweet-messages article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid #545149;
+}
+.tweet-messages article:hover {
+  box-shadow: 5px 10px rgb(121, 116, 142);
+}
+
+.tweet-messages header {
+  align-self: stretch;
+  height: 30%;
+  /* border: 2px dashed rgb(133, 30, 30); */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+.tweet-messages header div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  padding-top: 0.5rem;
+}
+.tweet-messages header i {
+  color: #545149;
+  margin: 0 0.3rem;
+}
+.tweet-messages header p {
+  margin: 0;
+  font-size: 30px;
+}
+
+.id_tweeted {
+  margin: 0;
+  padding-right: 0.5rem;
+  font-size: 30px;
+  align-self: flex-end;
+}
+
+.tweet__message {
+  align-self: stretch;
+  height: 50%;
+  /* border: 2px dashed rgb(13, 87, 155); */
+  border-bottom: 4px solid #545149;
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.tweet__message p {
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.tweet-messages footer {
+  align-self: stretch;
+  height: 10%;
+  /* border: 2px dashed rgb(99, 199, 79); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 0 0.5rem;
+}
