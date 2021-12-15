@@ -55,14 +55,19 @@ $(document).ready(function() {
     })
   }
   loadTweets();
+
   $("#tweet_submit").on('submit', function(evt) {
     evt.preventDefault();
     // console.log(evt);
     const $tweetText = $('#tweet-text');
     // console.log($tweetText.serialize());
-    $.post("/tweets", $tweetText.serialize());
-    
-
+    if ($tweetText.val().length === 0) {
+      alert('Your tweet is empty!')
+    } else if ($tweetText.val().length > 140) {
+      alert('Your tweet is too long!')
+    } else {
+      $.post("/tweets", $tweetText.serialize());
+    }
   })
   
 
