@@ -6,9 +6,11 @@
 $(document).ready(function() {
   
   const renderTweets = function(tweets) {
+    //sort tweets according to time
+    tweets.sort((a, b) => b.created_at - a.created_at );
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('.container').append($tweet);
+      $('.all-tweets').append($tweet);
     }
   }
 
@@ -44,30 +46,31 @@ $(document).ready(function() {
   // console.log($tweet);
   // $('.container').append($tweet);
   const loadTweets = function() {
+    $(".all-tweets").empty();
     $.getJSON('/tweets')
     .then((data) => {
-      // console.log(data);
-      // for (const elem of data) {
-      //   const tweet = createTweetElement(elem);
-      //   $('.container').append(tweet);
-      // }
       renderTweets(data);
     })
   }
+  //first data load
   loadTweets();
 
   $("#tweet_submit").on('submit', function(evt) {
     evt.preventDefault();
-    // console.log(evt);
+    
     const $tweetText = $('#tweet-text');
-    // console.log($tweetText.serialize());
+    
     if ($tweetText.val().length === 0) {
       alert('Your tweet is empty!')
     } else if ($tweetText.val().length > 140) {
       alert('Your tweet is too long!')
     } else {
-      $.post("/tweets", $tweetText.serialize());
+      $.post("/tweets", $tweetText.serialize())
+      //tweet textarea clear out
+      .then(() => {$tweetText.val('')})
+      .then(loadTweets);
     }
+    console.log($tweetText);
   })
   
 
