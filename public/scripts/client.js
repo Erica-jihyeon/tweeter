@@ -15,10 +15,10 @@ $(document).ready(function() {
   }
 
   const createTweetElement = function(data) {
+    /* the other way to prevent XSS without escaping function
     // const text = $("<div>").text(data.content.text);
     // console.log(text,text.text());
-    console.log(data.content.text)
-    console.log(escape(data.content.text))
+    */
     const item = 
       `<section class="tweet-messages">
         <article>
@@ -45,11 +45,9 @@ $(document).ready(function() {
 
       return item;
   }
-
-  // const $tweet = createTweetElement(tweetData);
-  // console.log($tweet);
-  // $('.container').append($tweet);
+ 
   const loadTweets = function() {
+    //clear the previous tweets list
     $(".all-tweets").empty();
     $.getJSON('/tweets')
     .then((data) => {
@@ -71,9 +69,16 @@ $(document).ready(function() {
     const $tweetText = $('#tweet-text');
 
     if ($tweetText.val().length === 0) {
-      alert('Your tweet is empty!')
+      // alert('Your tweet is empty!')
+      const $error = $('.error');
+      $error.addClass('shortError');
+      $error.text("Your tweet is empty!🤭");
+      $error.slideDown("slow");
     } else if ($tweetText.val().length > 140) {
-      alert('Your tweet is too long!')
+      const $error = $('.error')
+      $error.addClass('longError');
+      $error.text("Your tweet is too long!🧐");
+      $error.slideDown("slow");
     } else {
       $.post("/tweets", $tweetText.serialize())
       //tweet textarea clear out & reset counter
@@ -83,11 +88,19 @@ $(document).ready(function() {
       })
       .then(loadTweets);
     }
-  })
+
+    //remove the error message
+    $("#tweet-text").on('keyup', function() {
+      let counter = $('.counter');
+      counter.text(140 - $(this).val().length);
   
+      if (counter.text() >= 0) {
+        const $error = $('.error');
+        $error.removeClass('shortError');
+        $error.text("");
+        $error.removeClass('longError');
+      }
+    })
+  })
 
 })
-
-
-
-//<script>alert('uh oh!);</script>

@@ -7,7 +7,6 @@ $(document).ready(function() {
     if (counter.text() < 0) {
       // counter.css("color", "red");
       $('.counter').addClass('changeColor');
-
     } else {
       // counter.css("color", "#545149");
       $('.counter').removeClass('changeColor');
