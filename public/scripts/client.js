@@ -15,6 +15,10 @@ $(document).ready(function() {
   }
 
   const createTweetElement = function(data) {
+    // const text = $("<div>").text(data.content.text);
+    // console.log(text,text.text());
+    console.log(data.content.text)
+    console.log(escape(data.content.text))
     const item = 
       `<section class="tweet-messages">
         <article>
@@ -26,7 +30,7 @@ $(document).ready(function() {
             <p class="id_tweeted">${data.user.handle}</p>
           </header>
           <div class="tweet__message">
-            <p>${data.content.text}</p>
+            <p>${escape(data.content.text)}</p>
           </div>
           <footer>
             <p class="date_tweeted">${timeago.format(data.created_at)}</p>
@@ -55,22 +59,30 @@ $(document).ready(function() {
   //first data load
   loadTweets();
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   $("#tweet_submit").on('submit', function(evt) {
     evt.preventDefault();
     
     const $tweetText = $('#tweet-text');
-    
+
     if ($tweetText.val().length === 0) {
       alert('Your tweet is empty!')
     } else if ($tweetText.val().length > 140) {
       alert('Your tweet is too long!')
     } else {
       $.post("/tweets", $tweetText.serialize())
-      //tweet textarea clear out
-      .then(() => {$tweetText.val('')})
+      //tweet textarea clear out & reset counter
+      .then(() => {
+        $tweetText.val('');
+        $('.counter').text(140);
+      })
       .then(loadTweets);
     }
-    console.log($tweetText);
   })
   
 
@@ -78,3 +90,4 @@ $(document).ready(function() {
 
 
 
+//<script>alert('uh oh!);</script>
