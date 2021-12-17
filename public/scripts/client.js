@@ -69,7 +69,6 @@ $(document).ready(function() {
     const $tweetText = $('#tweet-text');
 
     if ($tweetText.val().length === 0) {
-      // alert('Your tweet is empty!')
       const $error = $('.error');
       $error.addClass('shortError');
       $error.text("Your tweet is empty!🤭");
@@ -89,11 +88,10 @@ $(document).ready(function() {
       .then(loadTweets);
     }
 
-    //remove the error message
+    //remove the error message when counter is between 0 to 140
     $("#tweet-text").on('keyup', function() {
       let counter = $('.counter');
       counter.text(140 - $(this).val().length);
-  
       if (counter.text() >= 0) {
         const $error = $('.error');
         $error.removeClass('shortError');
