@@ -36,3 +36,20 @@ nav > span {
 .nav__newPara > span {
   font-weight: bold;
 }
+
+@media only screen and (max-width: 1023px) {
+  nav {
+    height: 80px;
+    background-color: rgb(232, 159, 33);
+    background-image: url("/images/background_texture.png");
+    color: #ffffff;
+    padding: 0 1.5em;
+    padding-bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+  }
+}

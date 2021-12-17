@@ -82,3 +82,17 @@
 .tweet-messages footer a:hover {
   color: orange;
 }
+
+@media only screen and (min-width: 1024px) {
+  .desktop_screen {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 120px;
+    justify-content: center;
+  }
+  .container {
+    flex-grow: 2;
+    margin: 3rem;
+  }
+}
