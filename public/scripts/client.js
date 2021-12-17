@@ -24,7 +24,7 @@ $(document).ready(function() {
         <article>
           <header>
             <div>
-              <i class="fa-solid fa-face-grin-stars"></i>
+              <i class=${userAvatar()}></i>
               <p class="name">${data.user.name}</p>
             </div>
             <p class="id_tweeted">${data.user.handle}</p>
@@ -44,6 +44,11 @@ $(document).ready(function() {
       </section>`
 
       return item;
+  }
+
+  const userAvatar = () => {
+    const avatarArr = [`"fas fa-meh-blank"`, `"fa-solid fa-face-grin-stars"`, `"far fa-surprise"`, `"far fa-laugh-wink"`]
+    return avatarArr[Math.floor(Math.random()*4)];
   }
  
   const loadTweets = function() {
