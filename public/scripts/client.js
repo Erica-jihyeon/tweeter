@@ -76,13 +76,13 @@ $(document).ready(function() {
     if ($tweetText.val().length === 0) {
       const $error = $('.error');
       $error.addClass('shortError');
-      $error.text("Your tweet is empty!🤭");
-      $error.slideDown("slow");
+      $error.text("Your tweet is empty!🤭").slideDown("slow");
+      // $error.slideDown("slow");
     } else if ($tweetText.val().length > 140) {
       const $error = $('.error')
       $error.addClass('longError');
-      $error.text("Your tweet is too long!🧐");
-      $error.slideDown("slow");
+      $error.text("Your tweet is too long!🧐").slideDown("slow");
+      // $error.slideDown("slow");
     } else {
       $.post("/tweets", $tweetText.serialize())
       //tweet textarea clear out & reset counter
@@ -98,12 +98,12 @@ $(document).ready(function() {
       let counter = $('.counter');
       counter.text(140 - $(this).val().length);
       if (counter.text() >= 0) {
+        
         const $error = $('.error');
-        $error.removeClass('shortError');
-        $error.text("");
-        $error.removeClass('longError');
+        $error.slideUp();
       }
     })
+    
   })
 
 })
