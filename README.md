@@ -1,28 +1,32 @@
 # Tweeter Project
 
-Tweeter project is a client-side Single Page App(SPA) and communicates with a server via AJAX.
+Tweeter project is a client-side Single Page App(SPA) and communicates with a server via AJAX. The user can add new tweet message and added responsive design.
 
 ## Final Product
 
-#### screenshot of login page
+#### screenshot of letter counter and form validation
 
-!["screenshot of login page"](https://github.com/Erica-jihyeon/tinyapp/blob/master/docs/login.png)
+!["letter counter and form validation"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/letter%20counter%20and%20form%20validation.png)
 
-#### screenshot of register page
+#### screenshot of adding new tweet message
 
-!["screenshot of register page"](https://github.com/Erica-jihyeon/tinyapp/blob/master/docs/register.png)
+!["adding new tweet message"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/add%20new%20tweet.png)
 
-#### screenshot of urls page
+#### screenshot of random emoji and hover design
 
-!["screenshot of urls page"](https://github.com/Erica-jihyeon/tinyapp/blob/master/docs/your%20own%20url.png)
+!["andom emoji and hover design"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/emoji%2C%20hover%20design.png)
 
-#### screenshot of create short url page
+#### screenshot of sorted messages by time
 
-!["screenshot of create short url page"](https://github.com/Erica-jihyeon/tinyapp/blob/master/docs/create%20short%20url.png)
+!["sorted messages by time"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/time%20sorting.png)
 
-#### screenshot of edit & link page
+#### screenshot of small screen size
 
-!["screenshot of edit & link page"](https://github.com/Erica-jihyeon/tinyapp/blob/master/docs/edit%20url%20or%20link%20to%20origin%202.png)
+!["small screen size"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/small%20screen%20size.png)
+
+#### screenshot of big screen size
+
+!["big screen size"](https://github.com/Erica-jihyeon/tweeter/blob/master/docs/big%20screen%20size.png)
 
 ## Dependencies
 
@@ -34,4 +38,4 @@ Tweeter project is a client-side Single Page App(SPA) and communicates with a se
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
-- Run the development web server using the `node express_server.js` command.
+- Run the development web server using the `npm run local` command.
