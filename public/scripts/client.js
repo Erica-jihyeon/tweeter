@@ -5,6 +5,11 @@
  */
 $(document).ready(function() {
   
+
+  $(".nav__new").click(function() {
+    $('.new-tweet').slideToggle();
+  })
+
   const renderTweets = function(tweets) {
     //sort tweets according to time
     tweets.sort((a, b) => b.created_at - a.created_at );
@@ -98,12 +103,11 @@ $(document).ready(function() {
       let counter = $('.counter');
       counter.text(140 - $(this).val().length);
       if (counter.text() >= 0) {
-        
         const $error = $('.error');
         $error.slideUp();
       }
     })
-    
+
   })
 
 })
