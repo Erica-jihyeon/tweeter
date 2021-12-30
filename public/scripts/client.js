@@ -10,6 +10,24 @@ $(document).ready(function() {
     $('.new-tweet').slideToggle();
   })
 
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 380) {
+      $("#scroll_button").css("display", "block");
+      // $('nav').css("display", "none");
+      $('nav').fadeOut(300);
+    } else {
+      $("#scroll_button").css("display", "none");
+      // $('nav').css("display", "flex");
+      $('nav').fadeIn(300);
+    }
+  })
+
+  $("#scroll_button").click(function() {
+    // $('html').scrollTop(400);
+    $('html').animate({scrollTop: '400px'}, 400);
+  })
+
+
   const renderTweets = function(tweets) {
     //sort tweets according to time
     tweets.sort((a, b) => b.created_at - a.created_at );
