@@ -79,6 +79,7 @@ $(document).ready(function() {
     $(".all-tweets").empty();
     $.getJSON('/tweets')
     .then((data) => {
+      console.log(data);
       renderTweets(data);
     })
   }
